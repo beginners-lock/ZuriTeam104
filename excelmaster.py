@@ -3,13 +3,14 @@ import pandas as pd
 
 values = []
 index = []
-color = ["red", "cyan", "purple", "grey", "orange", "pink", "blue", "green"]
+color = ["red", "cyan", "purple", "grey", "orange", "pink", "blue", "green", "brown", "yellow"]
 
 # Update code to check for file extension
 # If file is a csv it will be converted to an excel because the syntax for excel in pandas is a lot much easier
 df = pd.read_excel('ref.xlsx')
 
 
+# This functino checks whether the current row is in the duplicates list ie the 'values' list
 def checker(indx):
     if len(values) > 0:
         for i in range(0, len(values)):
@@ -19,6 +20,8 @@ def checker(indx):
     return False
 
 
+# This for loop checks for duplicates
+# Stores the duplicate value in the values list and the index of the duplicates in the index list
 for row1 in range(0, len(df.index)):
     dup_index = []
 
@@ -33,9 +36,6 @@ for row1 in range(0, len(df.index)):
         values.append(df.values[row1])
         index.append(dup_index)
 
-
-# This for loop checks for duplicates
-# Stores the duplicate value in the values list and the index of the duplicates in the index list
 
 # Highlights duplicate and creates a new file 'highlight.xlsx'
 def highlight():
