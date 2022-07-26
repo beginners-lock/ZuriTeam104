@@ -1,4 +1,4 @@
-# Data manipulation of excel or csv files by Rophi
+# Data manipulation of excel or csv files by Rophi & Yusuf
 import pandas as pd
 
 values = []
